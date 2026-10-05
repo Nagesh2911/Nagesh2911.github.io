@@ -189,12 +189,21 @@
     }
     .project:hover { transform: translateY(-6px); border-color: rgba(255, 189, 57, .45); }
     .project .cover {
-      height: 170px; display: grid; place-items: center; position: relative;
-      background: linear-gradient(135deg, #1d1d1d, #0a0a0a);
-      border-bottom: 1px solid var(--line);
+      display: block; aspect-ratio: 16 / 9; position: relative; overflow: hidden;
+      background: #111; border-bottom: 1px solid var(--line);
     }
-    .project .cover span { font-size: 54px; font-weight: 900; color: var(--accent); opacity: .9; letter-spacing: -2px; }
+    .project .cover img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top center;
+      transition: transform .5s ease;
+    }
+    .project .cover::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, .55));
+      pointer-events: none;
+    }
+    .project:hover .cover img { transform: scale(1.06); }
     .project .cover em {
+      z-index: 1;
       position: absolute; top: 14px; left: 14px; font-style: normal; font-size: 12px;
       background: var(--accent); color: #000; padding: 2px 12px; border-radius: 20px; font-weight: 500;
     }
@@ -499,7 +508,7 @@
       </div>
       <div class="projects">
         <article class="project reveal">
-          <div class="cover"><em>Loyalty</em><span>AC</span></div>
+          <a class="cover" href="https://www.annexcloud.com" target="_blank" rel="noopener"><em>Loyalty</em><img src="images/annexcloud.png" alt="Annex Cloud website homepage" loading="lazy" /></a>
           <div class="body">
             <h3>Annex Cloud — Enterprise Loyalty Platform</h3>
             <p>Loyalty and receipt-scanning modules letting enterprise brands reward purchases — campaigns, segmentation, rewards, coupons and tiers.</p>
@@ -508,7 +517,7 @@
           </div>
         </article>
         <article class="project reveal">
-          <div class="cover"><em>Fleet</em><span>FL</span></div>
+          <a class="cover" href="https://fleetain.com" target="_blank" rel="noopener"><em>Fleet</em><img src="images/fleetain.png" alt="Fleetain website homepage" loading="lazy" /></a>
           <div class="body">
             <h3>Fleetain — Fleet Management &amp; Accounting</h3>
             <p>Seven operations modules — maintenance, inspections, work orders, spare-parts inventory, fuel tracking — with UIN-based parts lifecycle tracking.</p>
@@ -517,7 +526,7 @@
           </div>
         </article>
         <article class="project reveal">
-          <div class="cover"><em>Agritech</em><span>TFS</span></div>
+          <a class="cover" href="https://tradeforsure.com" target="_blank" rel="noopener"><em>Agritech</em><img src="images/tradeforsure.png" alt="Trade For Sure website homepage" loading="lazy" /></a>
           <div class="body">
             <h3>Trade For Sure — Mandi Central App</h3>
             <p>Digitized mandi trading: commodities, traders, buyers, sellers and transactions, with live prices for traders and farmers across India.</p>
