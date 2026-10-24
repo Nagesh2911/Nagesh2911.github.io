@@ -1,6 +1,6 @@
 # Nagesh Gavhane — Portfolio
 
-Personal portfolio of **Nagesh Gavhane**, Senior Backend Engineer with 10+ years of experience building scalable REST APIs and backend services with Python, FastAPI and PHP.
+Personal portfolio of **Nagesh Gavhane**, Senior Backend Engineer with 9+ years of experience building scalable REST APIs and backend services with Python, FastAPI and PHP.
 
 **Live site:** https://nagesh2911.github.io/
 
